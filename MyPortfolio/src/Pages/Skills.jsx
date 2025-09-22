@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaReact, FaNodeJs, FaDatabase, FaCss3Alt } from "react-icons/fa";
-import { SiMongodb, SiTailwindcss, SiMui, SiSass } from "react-icons/si";
+import { FaReact, FaNodeJs, FaDatabase, FaCss3Alt, FaWordpress } from "react-icons/fa";
+import { SiMongodb, SiTailwindcss, SiMui, SiSass, SiShopify } from "react-icons/si";
 import { BsFiletypeSql } from "react-icons/bs";
 
 const skills = [
@@ -13,21 +13,28 @@ const skills = [
   { name: "MUI", icon: <SiMui className="text-[#00ADB5] text-4xl" /> },
   { name: "Sass", icon: <SiSass className="text-[#00ADB5] text-4xl" /> },
   { name: "SQL", icon: <BsFiletypeSql className="text-[#00ADB5] text-4xl" /> },
+  { name: "WordPress", icon: <FaWordpress className="text-[#00ADB5] text-4xl" /> },
+  { name: "Shopify", icon: <SiShopify className="text-[#00ADB5] text-4xl" /> },
 ];
 
-const Work = ({id}) => {
+const Work = ({ id }) => {
   return (
-    <div className="w-full flex justify-center items-center min-h-screen py-16">
+    <div id={id} className="w-full flex justify-center items-center min-h-screen py-16">
       <div className="max-w-6xl w-full px-6 text-center">
         {/* Title Animation */}
         <motion.h1
-          className="text-5xl font-bold text-white mb-12"
+          className="text-5xl font-bold text-white mb-4"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          My <span className="text-[#00ADB5]">Skills</span>
+          Technologies <span className="text-[#00ADB5]">I Use</span>
         </motion.h1>
+
+        {/* Subtitle */}
+        <p className="text-gray-400 mb-12 text-lg max-w-2xl mx-auto">
+          I use modern tools & frameworks to deliver fast, scalable, and client-focused solutions.
+        </p>
 
         {/* Skills Grid with Animation */}
         <motion.div

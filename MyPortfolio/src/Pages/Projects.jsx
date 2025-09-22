@@ -1,108 +1,66 @@
 import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-const projects = {
-  fullStack: [
-    {
-      title: "Expanse Tracker App",
-      description:
-        "A Expanse Tracker where you can Add your Income, Expanses and Track your Balance with Authenticate firebase.",
-      github: "https://github.com/Pnkj12joshi/Expanse-Tracker",
-      liveDemo: "#",
-    },
-    {
-      title: "E-Commerce Platform",
-      description:
-        "A complete e-commerce website with authentication, product listing, and cart functionality and have payment features COD and Stripe.",
-      github: "https://github.com/Pnkj12joshi/EcommerceApp",
-      liveDemo: "#",
-    },
-  ],
-  frontend: [
-    {
-      title: "Audio Plateform (Spotify Clone)",
-      description:
-        "A React-based Audio Platform with features like audio playback, playlist management",
-      github: "https://github.com/Pnkj12joshi/spotify-clone",
-      liveDemo: "#",
-    },
-  ],
-};
 
-const Projects = ({id}) => {
+const Projects = () => {
+  const navigate = useNavigate();
   return (
-    <div className="max-w-6xl mx-auto p-8 min-h-screen flex flex-col items-center justify-center mt-20">
-      <h2 className="text-4xl font-bold text-white text-center mb-10 tracking-wide uppercase">
-        Projects
+    <div
+      id="Portfolio"
+      className="max-w-7xl mx-auto px-6 py-20 min-h-screen mt-20"
+    >
+      <h2 className="text-4xl font-bold text-white text-center mb-16 tracking-wide uppercase">
+        My Freelance Work
       </h2>
 
-      {/* Full Stack Projects */}
-      <div className="w-full">
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.fullStack.map((project, index) => (
-            <div
-              key={index}
-              className="p-6 bg-white/20 backdrop-blur-md shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
-            >
-              <h4 className="text-2xl font-semibold text-white">{project.title}</h4>
-              <p className="text-white opacity-80 mt-2">{project.description}</p>
-              <div className="flex gap-4 mt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white flex items-center gap-2 bg-[#00ADB5] px-4 py-2 rounded-md hover:bg-[#007b83] transition duration-300"
-                >
-                  <FaGithub /> GitHub
-                </a>
-                <a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white flex items-center gap-2 bg-[#00ADB5] px-4 py-2 rounded-md hover:bg-[#007b83] transition duration-300"
-                >
-                  <FaExternalLinkAlt /> Live Demo
-                </a>
-              </div>
-            </div>
-          ))}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {/* Landing Pages Card */}
+        <div onClick={()=> navigate("/landing")}
+          className="bg-[#1a1a1a] rounded-2xl shadow-lg p-10 text-center 
+                     hover:bg-[#222831] hover:shadow-2xl cursor-pointer 
+                     transition duration-300"
+        >
+          <h3 className="text-2xl font-semibold text-[#00ADB5] uppercase tracking-wide">
+            Landing Pages
+          </h3>
+        </div>
+
+        {/* Websites / Web Apps Card */}
+        <div onClick={()=> navigate("/websites")}
+          className="bg-[#1a1a1a] rounded-2xl shadow-lg p-10 text-center 
+                     hover:bg-[#222831] hover:shadow-2xl cursor-pointer 
+                     transition duration-300"
+        >
+          <h3 className="text-2xl font-semibold text-[#00ADB5] uppercase tracking-wide">
+            Websites / Web Apps
+          </h3>
+        </div>
+
+        {/* UI/UX Card */}
+        <div onClick={()=>navigate("/uiux")}
+          className="bg-[#1a1a1a] rounded-2xl shadow-lg p-10 text-center 
+                     hover:bg-[#222831] hover:shadow-2xl cursor-pointer 
+                     transition duration-300"
+        >
+          <h3 className="text-2xl font-semibold text-[#00ADB5] uppercase tracking-wide">
+            UI / UX Design
+          </h3>
         </div>
       </div>
 
-      {/* Frontend Projects */}
-      <div className="w-full mt-12">
-        <div className="grid md:grid-cols-2 gap-6">
-          {projects.frontend.map((project, index) => (
-            <div
-              key={index}
-              className="p-6 bg-white/20 backdrop-blur-md shadow-lg rounded-xl hover:scale-105 transition-transform duration-300"
-            >
-              <h4 className="text-2xl font-semibold text-white">{project.title}</h4>
-              <p className="text-white opacity-80 mt-2">{project.description}</p>
-              <div className="flex gap-4 mt-4">
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white flex items-center gap-2 bg-[#00ADB5] px-4 py-2 rounded-md hover:bg-[#007b83] transition duration-300"
-                >
-                  <FaGithub /> GitHub
-                </a>
-                <a
-                  href={project.liveDemo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white flex items-center gap-2 bg-[#00ADB5] px-4 py-2 rounded-md hover:bg-[#007b83] transition duration-300"
-                >
-                  <FaExternalLinkAlt /> Live Demo
-                </a>
-              </div>
-            </div>
-          ))}
-        </div>
+      {/* Call to Action */}
+      <div className="mt-20 text-center">
+        <a
+          href="#contact"
+          className="bg-[#00ADB5] text-white px-8 py-3 rounded-lg font-semibold 
+                     hover:bg-[#008b94] transition duration-300 shadow-lg"
+        >
+          Let’s Work Together
+        </a>
       </div>
     </div>
   );
 };
 
 export default Projects;
+  
